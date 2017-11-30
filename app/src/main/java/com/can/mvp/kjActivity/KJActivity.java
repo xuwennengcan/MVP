@@ -15,6 +15,7 @@ import java.lang.ref.SoftReference;
 /**
  * Activity's framework,the developer shouldn't extends it
  * Created by can on 2017/11/17.
+ * 继承的Activity
  */
 
 public abstract class KJActivity extends FragmentActivity implements
