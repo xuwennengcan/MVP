@@ -62,4 +62,22 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_marginTop="1dp"
+        android:id="@+id/ll_click4"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="4.沉浸式-多Fragment模式"
+            android:background="@color/color_f7f7f8"
+            />
+
+    </LinearLayout>
+
 </LinearLayout>

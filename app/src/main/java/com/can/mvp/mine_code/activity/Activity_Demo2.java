@@ -1,4 +1,4 @@
-package com.can.mvp.activity;
+package com.can.mvp.mine_code.activity;
 
 import android.os.Bundle;
 

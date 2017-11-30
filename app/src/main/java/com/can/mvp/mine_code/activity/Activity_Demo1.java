@@ -1,4 +1,4 @@
-package com.can.mvp.activity;
+package com.can.mvp.mine_code.activity;
 
 import android.os.Bundle;
 
@@ -6,21 +6,21 @@ import com.can.mvp.R;
 import com.can.mvp.base.BaseActivity;
 
 /**
- * 沉浸式 - 全透明
+ * 沉浸式
  * Created by can on 2017/11/29.
  */
 
-public class Activity_Demo3 extends BaseActivity {
+public class Activity_Demo1 extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setStatusBar(true,true,false);
+        setStatusBar(false,false,true);
     }
 
     @Override
     public void setRootView() {
         super.setRootView();
-        setContentView(R.layout.activity_demo3);
+        setContentView(R.layout.activity_demo1);
     }
 }

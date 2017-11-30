@@ -1,4 +1,4 @@
-package com.can.mvp.activity;
+package com.can.mvp.mine_code.activity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +22,8 @@ public class StartActivity extends BaseActivity {
     private LinearLayout ll2;
     @BindView(id = R.id.ll_click3,click = true)
     private LinearLayout ll3;
+    @BindView(id = R.id.ll_click4,click = true)
+    private LinearLayout ll4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,9 @@ public class StartActivity extends BaseActivity {
                 break;
             case R.id.ll_click3:
                 OpenActivityHelper.showDemo3Activity(StartActivity.this);
+                break;
+            case R.id.ll_click4:
+                OpenActivityHelper.showDemo4Activity(StartActivity.this);
                 break;
         }
     }
