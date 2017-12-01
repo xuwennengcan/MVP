@@ -1,6 +1,7 @@
 package com.can.mvp.kjActivity;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 
+import com.can.mvp.base.BaseFragment;
 import com.can.mvp.util.AnnotateUtil;
 
 import java.lang.ref.SoftReference;
@@ -25,7 +27,7 @@ public abstract class KJActivity extends FragmentActivity implements
 
     public Activity aty;
 
-    protected KJFragment currentKJFragment;
+    protected Fragment currentKJFragment;
     protected SupportFragment currentSupportFragment;
     private ThreadDataCallBack callback;
     private KJActivityHandle threadHandle = new KJActivityHandle(this);
@@ -308,4 +310,30 @@ public abstract class KJActivity extends FragmentActivity implements
         currentSupportFragment = targetFragment;
         transaction.commit();
     }
+
+    /**
+     * 用Fragment替换视图
+     *
+     * @param resView        将要被替换掉的视图
+     * @param targetFragment 用来替换的Fragment
+     */
+    public void changeFragment(int resView, BaseFragment targetFragment) {
+        if (targetFragment.equals(currentKJFragment)) {
+            return;
+        }
+        FragmentTransaction transaction = getFragmentManager()
+                .beginTransaction();
+            transaction.add(resView, targetFragment, targetFragment.getClass()
+                    .getName());
+        if (targetFragment.isHidden()) {
+            transaction.show(targetFragment);
+        }
+        if (currentKJFragment != null ) {
+            transaction.hide(currentKJFragment);
+        }
+        currentKJFragment = targetFragment;
+        transaction.commit();
+    }
+
+
 }

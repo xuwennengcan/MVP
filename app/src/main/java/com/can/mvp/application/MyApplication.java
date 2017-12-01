@@ -11,24 +11,24 @@ import com.can.mvp.util.ActivityManagerUtil;
  */
 
 public class MyApplication extends Application {
-    private static MyApplication context;
+    private static MyApplication mInstance;
     private static ActivityManagerUtil activityManager = null;
 
     public MyApplication() {
 
     }
 
-    public void onCreate() {
-        super.onCreate();
-        context = this;
-        activityManager = ActivityManagerUtil.getInstance();
+
+    public static Application getInstance(){
+        if(mInstance == null){
+            mInstance = new MyApplication();
+        }
+        return mInstance;
     }
 
-    public static MyApplication getInstance() {
-        return context;
-    }
-
-    public ActivityManagerUtil getActivityManager() {
+    public static ActivityManagerUtil getActivityManager() {
+        if(activityManager==null)
+            activityManager = ActivityManagerUtil.getInstance();
         return activityManager;
     }
 

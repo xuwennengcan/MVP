@@ -25,6 +25,15 @@ public class Activity_Demo4 extends BaseActivity {
     public void setRootView() {
         super.setRootView();
         setContentView(R.layout.activity_demo4);
+        changeFragment(R.id.frame_layout,new Fragment_Demo1());
+
+    }
+
+    @Override
+    protected void initView() {
+        super.initView();
+        changeFragment(R.id.frame_layout,new Fragment_Demo1());
+
     }
 
     @Override
@@ -32,12 +41,12 @@ public class Activity_Demo4 extends BaseActivity {
         super.widgetClick(v);
         switch (v.getId()){
             case R.id.btn_fragment1:
-                setStatusBar(false,false,true);
                 changeFragment(R.id.frame_layout,new Fragment_Demo1());
+
                 break;
             case R.id.btn_fragment2:
-                setStatusBar(true,true,false);
                 changeFragment(R.id.frame_layout,new Fragment_Demo2());
+
                 break;
         }
     }

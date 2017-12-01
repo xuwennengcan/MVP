@@ -39,17 +39,15 @@ public class BaseActivity extends KJActivity{
         ActivityManagerUtil.getInstance().addActivty(this);
         this.mContext = MyApplication.getInstance();
         super.onCreate(savedInstanceState);
-        this.getWindow().addFlags(67108864);
-        this.getWindow().addFlags(134217728);
         if(Build.VERSION.SDK_INT >= 19) {
             this.setTranslucentStatus(true);
         }
 
         this.tintManager = new SystemBarTintManager(this);
-        this.tintManager.setStatusBarTintColor(ContextCompat.getColor(this, R.color.colorPrimary));
-        AppUtil.getPromission(this);
 
-        setStatusBar(true,true,true); //默认状态
+        AppUtil.getPromission(this);
+        setStatusBarFullTransparent();
+        //setStatusBar(true,true,true); //默认状态
     }
 
     @TargetApi(19)
@@ -112,18 +110,24 @@ public class BaseActivity extends KJActivity{
 
     /**
      * 设置状态栏状态
-     * @param flag1 是否给状态栏着色
-     * @param flag2 内容是否紧贴着状态栏
-     * @param flag3 全透明或半透明  true 全透明 false 半透明
+     * @param isStatusBarTint 是否给状态栏着色
+     * @param isFitStatusBar 内容是否紧贴着状态栏
+     * @param isFullTransparent 全透明或半透明  true 全透明 false 半透明
      */
-    public void setStatusBar(boolean flag1 , boolean flag2 , boolean flag3){
-        tintManager.setStatusBarTintEnabled(flag1);
-        setFitSystemWindow(flag2);
-        if(flag3)
+    public void setStatusBar(boolean isStatusBarTint , boolean isFitStatusBar , boolean isFullTransparent){
+        tintManager.setStatusBarTintEnabled(isStatusBarTint);
+        setFitSystemWindow(isFitStatusBar);
+        if(isFullTransparent) {
             setStatusBarFullTransparent();
-        else
+        }
+        else {
             setHalfTransparent();
+        }
         setDrawerLayoutFitSystemWindow();
+
+        //默认
+        tintManager.setStatusBarTintColor(ContextCompat.getColor(this, R.color.color_fc4743));
+        tintManager.setTintAlpha(1);
     }
 
     /**
