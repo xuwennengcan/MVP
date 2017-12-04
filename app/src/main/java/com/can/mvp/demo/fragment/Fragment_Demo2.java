@@ -1,6 +1,6 @@
-package com.can.mvp.mine_code.fragment;
+package com.can.mvp.demo.fragment;
 
-import android.support.v4.content.ContextCompat;
+import android.view.View;
 
 import com.can.mvp.R;
 import com.can.mvp.base.BaseFragment;
@@ -17,8 +17,8 @@ public class Fragment_Demo2 extends BaseFragment {
     }
 
     @Override
-    protected void initView() {
-        mStatusBarView.setBackgroundColor(ContextCompat.getColor(getContext(),R.color.color_fc4743));
+    protected void initView(View view) {
+        setStatusBarViewBackground(getActivity(),R.color.color_fc4743);
     }
 
     @Override

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:clipToPadding="false"
-    android:background="@color/color_white"
+    android:background="@color/color_f7f7f8"
     >
 
     <LinearLayout
@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:layout_marginTop="1dp"
+        android:background="@color/color_white"
         android:layout_height="wrap_content">
 
         <TextView
@@ -21,7 +22,6 @@
             android:gravity="center"
             android:padding="10dp"
             android:text="1.沉浸式-背景为图片"
-            android:background="@color/color_f7f7f8"
             />
 
     </LinearLayout>
@@ -31,6 +31,8 @@
         android:id="@+id/ll_click2"
         android:layout_width="match_parent"
         android:orientation="horizontal"
+        android:background="@color/color_white"
+
         android:layout_height="wrap_content">
 
         <TextView
@@ -39,7 +41,6 @@
             android:gravity="center"
             android:padding="10dp"
             android:text="2.沉浸式-背景为颜色值-全透明"
-            android:background="@color/color_f7f7f8"
             />
 
     </LinearLayout>
@@ -49,6 +50,8 @@
         android:id="@+id/ll_click3"
         android:layout_width="match_parent"
         android:orientation="horizontal"
+        android:background="@color/color_white"
+
         android:layout_height="wrap_content">
 
         <TextView
@@ -57,7 +60,6 @@
             android:gravity="center"
             android:padding="10dp"
             android:text="3.沉浸式-背景为颜色值-半透明"
-            android:background="@color/color_f7f7f8"
             />
 
     </LinearLayout>
@@ -67,6 +69,7 @@
         android:id="@+id/ll_click4"
         android:layout_width="match_parent"
         android:orientation="horizontal"
+        android:background="@color/color_white"
         android:layout_height="wrap_content">
 
         <TextView
@@ -75,7 +78,24 @@
             android:gravity="center"
             android:padding="10dp"
             android:text="4.沉浸式-多Fragment模式"
-            android:background="@color/color_f7f7f8"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="1dp"
+        android:id="@+id/ll_click5"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:background="@color/color_white"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="5.加载数据模式"
             />
 
     </LinearLayout>

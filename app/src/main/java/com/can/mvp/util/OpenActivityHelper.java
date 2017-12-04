@@ -2,10 +2,11 @@ package com.can.mvp.util;
 
 import android.content.Context;
 
-import com.can.mvp.mine_code.activity.Activity_Demo1;
-import com.can.mvp.mine_code.activity.Activity_Demo2;
-import com.can.mvp.mine_code.activity.Activity_Demo3;
-import com.can.mvp.mine_code.activity.Activity_Demo4;
+import com.can.mvp.demo.activity.Activity_Demo1;
+import com.can.mvp.demo.activity.Activity_Demo2;
+import com.can.mvp.demo.activity.Activity_Demo3;
+import com.can.mvp.demo.activity.Activity_Demo4;
+import com.can.mvp.demo.activity.Activity_Demo5;
 
 /**
  * 展示其它页面
@@ -25,5 +26,8 @@ public class OpenActivityHelper {
     }
     public static void showDemo4Activity(Context context) {
         OpenActivityUtil.getInstance().openActivity(context, Activity_Demo4.class);
+    }
+    public static void showDemo5Activity(Context context) {
+        OpenActivityUtil.getInstance().openActivity(context, Activity_Demo5.class);
     }
 }

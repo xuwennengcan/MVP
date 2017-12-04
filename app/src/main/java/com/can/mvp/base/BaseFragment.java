@@ -1,9 +1,11 @@
 package com.can.mvp.base;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +19,7 @@ import com.can.mvp.util.AnnotateUtil;
 
 public abstract class BaseFragment extends Fragment implements View.OnClickListener {
 
-    private ViewGroup mView;
+    protected ViewGroup mView;
     protected View mStatusBarView;
 
 
@@ -38,14 +40,14 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         addStatusBar();
-        initView();
+        initView(view);
         initData();
         initListener();
     }
 
     protected abstract int getLayoutId();
 
-    protected abstract void initView();
+    protected abstract void initView(View view);
 
     protected abstract void initData();
 
@@ -62,6 +64,16 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
             if (mView != null&& Build.VERSION.SDK_INT >= 19)
                 mView.addView(mStatusBarView, 0);
         }
+    }
+
+    /**
+     * 设置状态栏背景色
+     * @param context 上下文
+     * @param color 颜色值
+     */
+    public  void setStatusBarViewBackground(Context context, int color){
+        if ( Build.VERSION.SDK_INT >= 19)
+            mStatusBarView.setBackgroundColor(ContextCompat.getColor(context, color));
     }
 
     protected <T extends View> T bindView(int id) {

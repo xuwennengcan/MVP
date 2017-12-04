@@ -1,4 +1,4 @@
-package com.can.mvp.mine_code.fragment;
+package com.can.mvp.demo.fragment;
 
 import android.view.View;
 import android.widget.ImageView;
@@ -23,7 +23,7 @@ public class Fragment_Demo1 extends BaseFragment {
     }
 
     @Override
-    protected void initView() {
+    protected void initView(View view) {
         mStatusBarView.setVisibility(View.GONE);
     }
 

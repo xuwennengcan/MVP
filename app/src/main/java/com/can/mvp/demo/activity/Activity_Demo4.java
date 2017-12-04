@@ -1,4 +1,4 @@
-package com.can.mvp.mine_code.activity;
+package com.can.mvp.demo.activity;
 
 import android.view.View;
 import android.widget.Button;
@@ -6,8 +6,8 @@ import android.widget.Button;
 import com.can.mvp.R;
 import com.can.mvp.base.BaseActivity;
 import com.can.mvp.kjActivity.BindView;
-import com.can.mvp.mine_code.fragment.Fragment_Demo1;
-import com.can.mvp.mine_code.fragment.Fragment_Demo2;
+import com.can.mvp.demo.fragment.Fragment_Demo1;
+import com.can.mvp.demo.fragment.Fragment_Demo2;
 
 /**
  * Created by can on 2017/11/30.
