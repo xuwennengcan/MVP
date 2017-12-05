@@ -2,7 +2,6 @@ package com.can.mvp.kjActivity;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +15,7 @@ import java.lang.ref.SoftReference;
  * Created by can on 2017/11/17.
  */
 
-public abstract class KJFragment extends Fragment implements View.OnClickListener {
+public abstract class KJFragment extends SupportFragment implements View.OnClickListener {
 
     public static final int WHICH_MSG = 0X37211;
 

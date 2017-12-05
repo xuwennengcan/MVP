@@ -23,7 +23,6 @@ public abstract class BaseFragment extends SupportFragment implements View.OnCli
     protected ViewGroup mView;
     protected View mStatusBarView;
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (mView == null) {

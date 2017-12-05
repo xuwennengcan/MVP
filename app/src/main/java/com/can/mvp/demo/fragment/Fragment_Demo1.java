@@ -13,8 +13,8 @@ import com.can.mvp.util.ShowToastUtil;
 public class Fragment_Demo1 extends BaseFragment {
 
     public static Fragment_Demo1 newInstance(){
-        Fragment_Demo1 fragment_demo1 = new Fragment_Demo1();
-        return fragment_demo1;
+        Fragment_Demo1 fragment = new Fragment_Demo1();
+        return fragment;
     }
 
     @Override
@@ -43,7 +43,7 @@ public class Fragment_Demo1 extends BaseFragment {
         super.widgetClick(v);
         switch (v.getId()){
             case R.id.iv_click:
-                ShowToastUtil.showToast(getActivity(),"hello");
+                ShowToastUtil.showToast(getContext(),"hello");
                 break;
         }
     }

@@ -1,5 +1,6 @@
 package com.can.mvp.demo.activity;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
@@ -21,15 +22,18 @@ public class Activity_Demo4 extends BaseActivity {
     @BindView(id = R.id.btn_fragment2,click = true)
     private Button btn_fragment2;    //按钮2
 
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        changeFragment(R.id.frame_layout,Fragment_Demo1.newInstance());
+    }
+
     @Override
     public void setRootView() {
         super.setRootView();
         setContentView(R.layout.activity_demo4);
-    }
-
-    @Override
-    protected void initView() {
-        super.initView();
     }
 
     @Override
