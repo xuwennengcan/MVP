@@ -1,11 +1,9 @@
 package com.can.mvp.demo.fragment;
 
 import android.view.View;
-import android.widget.ImageView;
 
 import com.can.mvp.R;
-import com.can.mvp.base.BaseFragment;
-import com.can.mvp.kjActivity.BindView;
+import com.can.mvp.base.basefragment.BaseFragment;
 import com.can.mvp.util.ShowToastUtil;
 
 /**
@@ -14,8 +12,10 @@ import com.can.mvp.util.ShowToastUtil;
 
 public class Fragment_Demo1 extends BaseFragment {
 
-    @BindView(id = R.id.iv_click,click = true)
-    private ImageView iv;
+    public static Fragment_Demo1 newInstance(){
+        Fragment_Demo1 fragment_demo1 = new Fragment_Demo1();
+        return fragment_demo1;
+    }
 
     @Override
     protected int getLayoutId() {
@@ -24,7 +24,8 @@ public class Fragment_Demo1 extends BaseFragment {
 
     @Override
     protected void initView(View view) {
-        mStatusBarView.setVisibility(View.GONE);
+        setStatusBarViewVisiable(View.GONE);
+        bindView(R.id.iv_click,true);
     }
 
     @Override
@@ -40,6 +41,10 @@ public class Fragment_Demo1 extends BaseFragment {
     @Override
     protected void widgetClick(View v) {
         super.widgetClick(v);
-        ShowToastUtil.showToast(getActivity(),"hello");
+        switch (v.getId()){
+            case R.id.iv_click:
+                ShowToastUtil.showToast(getActivity(),"hello");
+                break;
+        }
     }
 }

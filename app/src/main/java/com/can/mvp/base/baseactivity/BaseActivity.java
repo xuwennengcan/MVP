@@ -1,4 +1,4 @@
-package com.can.mvp.base;
+package com.can.mvp.base.baseactivity;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -18,8 +18,6 @@ import com.can.mvp.kjActivity.KJActivity;
 import com.can.mvp.manager.SystemBarTintManager;
 import com.can.mvp.util.ActivityManagerUtil;
 import com.can.mvp.util.AppUtil;
-import com.can.mvp.util.NetWorkUtil;
-import com.can.mvp.util.ShowToastUtil;
 
 /**
  * Created by can on 2017/11/17.
@@ -80,9 +78,6 @@ public class BaseActivity extends KJActivity{
     }
 
     protected void initView() {
-        if(!NetWorkUtil.hasInternetConnected(this)) {
-            ShowToastUtil.showToast(this, "请检查网络");
-        }
 
     }
 

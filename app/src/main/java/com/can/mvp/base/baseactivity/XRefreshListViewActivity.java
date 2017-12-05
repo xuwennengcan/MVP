@@ -1,4 +1,4 @@
-package com.can.mvp.base;
+package com.can.mvp.base.baseactivity;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.can.mvp.R;
-import com.can.mvp.base.baseadapter.EmptyLayout;
+import com.can.mvp.base.baseview.EmptyLayout;
 import com.can.mvp.base.baseadapter.ListBaseAdapter;
 import com.can.mvp.bean.MyEntity;
 import com.can.mvp.http.MyResponseHandler;

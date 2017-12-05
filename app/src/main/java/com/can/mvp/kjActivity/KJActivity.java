@@ -1,15 +1,15 @@
 package com.can.mvp.kjActivity;
 
 import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 
-import com.can.mvp.base.BaseFragment;
+import com.can.mvp.base.basefragment.BaseFragment;
 import com.can.mvp.util.AnnotateUtil;
 
 import java.lang.ref.SoftReference;
@@ -266,7 +266,7 @@ public abstract class KJActivity extends FragmentActivity implements
         if (targetFragment.equals(currentKJFragment)) {
             return;
         }
-        FragmentTransaction transaction = getFragmentManager()
+        FragmentTransaction transaction = getSupportFragmentManager()
                 .beginTransaction();
         if (!targetFragment.isAdded()) {
             transaction.add(resView, targetFragment, targetFragment.getClass()
@@ -293,7 +293,7 @@ public abstract class KJActivity extends FragmentActivity implements
         if (targetFragment.equals(currentSupportFragment)) {
             return;
         }
-        android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager()
+        FragmentTransaction transaction = getSupportFragmentManager()
                 .beginTransaction();
         if (!targetFragment.isAdded()) {
             transaction.add(resView, targetFragment, targetFragment.getClass()
@@ -321,14 +321,17 @@ public abstract class KJActivity extends FragmentActivity implements
         if (targetFragment.equals(currentKJFragment)) {
             return;
         }
-        FragmentTransaction transaction = getFragmentManager()
+        FragmentTransaction transaction = getSupportFragmentManager()
                 .beginTransaction();
+        if (!targetFragment.isAdded()) {
             transaction.add(resView, targetFragment, targetFragment.getClass()
                     .getName());
+        }
         if (targetFragment.isHidden()) {
             transaction.show(targetFragment);
+            targetFragment.onChange();
         }
-        if (currentKJFragment != null ) {
+        if (currentKJFragment != null && currentKJFragment.isVisible()) {
             transaction.hide(currentKJFragment);
         }
         currentKJFragment = targetFragment;

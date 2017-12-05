@@ -1,8 +1,7 @@
-package com.can.mvp.base.baseadapter;
+package com.can.mvp.base.basefragment;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +11,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.can.mvp.R;
-import com.can.mvp.base.BaseFragment;
+import com.can.mvp.base.baseadapter.ListBaseAdapter;
+import com.can.mvp.base.baseview.EmptyLayout;
 import com.can.mvp.bean.MyEntity;
 import com.can.mvp.http.MyResponseHandler;
 import com.can.mvp.util.Config;
@@ -63,8 +63,9 @@ public class XRefreshListViewFragment<T extends MyEntity> extends BaseFragment i
     public XRefreshListViewFragment() {
     }
 
+
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    protected View inflaterView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
         return inflater.inflate(R.layout.activity_listview_refresh, container, false);
     }
 

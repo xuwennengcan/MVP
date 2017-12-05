@@ -3,7 +3,7 @@ package com.can.mvp.demo.activity;
 import android.os.Bundle;
 
 import com.can.mvp.R;
-import com.can.mvp.base.BaseActivity;
+import com.can.mvp.base.baseactivity.BaseActivity;
 
 /**
  * 沉浸式

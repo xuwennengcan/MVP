@@ -1,4 +1,4 @@
-package com.can.mvp.base.baseadapter;
+package com.can.mvp.base.baseview;
 
 import android.content.Context;
 import android.util.AttributeSet;

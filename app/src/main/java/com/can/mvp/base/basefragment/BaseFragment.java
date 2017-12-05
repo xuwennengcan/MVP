@@ -1,6 +1,5 @@
-package com.can.mvp.base;
+package com.can.mvp.base.basefragment;
 
-import android.app.Fragment;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
@@ -10,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.can.mvp.R;
+import com.can.mvp.kjActivity.SupportFragment;
 import com.can.mvp.kjActivity.ViewColor;
 import com.can.mvp.util.AnnotateUtil;
 
@@ -17,7 +18,7 @@ import com.can.mvp.util.AnnotateUtil;
  * Created by can on 2017/12/1.
  */
 
-public abstract class BaseFragment extends Fragment implements View.OnClickListener {
+public abstract class BaseFragment extends SupportFragment implements View.OnClickListener {
 
     protected ViewGroup mView;
     protected View mStatusBarView;
@@ -49,10 +50,16 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
 
     protected abstract void initView(View view);
 
+    @Override
+    protected View inflaterView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
+        return null;
+    }
+
     protected abstract void initData();
 
     protected abstract void initListener();
 
+    //添加状态栏
     private void addStatusBar() {
         if (mStatusBarView == null) {
             mStatusBarView = new View(getActivity());
@@ -61,6 +68,8 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
             ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(screenWidth, statusBarHeight);
             mStatusBarView.setLayoutParams(params);
             mStatusBarView.requestLayout();
+            setStatusBarViewBackground(getContext(), R.color.color_fc4743);
+            setStatusBarViewVisiable(View.VISIBLE);
             if (mView != null&& Build.VERSION.SDK_INT >= 19)
                 mView.addView(mStatusBarView, 0);
         }
@@ -72,8 +81,17 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
      * @param color 颜色值
      */
     public  void setStatusBarViewBackground(Context context, int color){
-        if ( Build.VERSION.SDK_INT >= 19)
+        if ( mStatusBarView!=null&&Build.VERSION.SDK_INT >= 19)
             mStatusBarView.setBackgroundColor(ContextCompat.getColor(context, color));
+    }
+
+    /**
+     * 设置状态栏隐藏状态
+     * @param visiable
+     */
+    public void setStatusBarViewVisiable(int visiable){
+        if(mStatusBarView!=null)
+            mStatusBarView.setVisibility(visiable);
     }
 
     protected <T extends View> T bindView(int id) {

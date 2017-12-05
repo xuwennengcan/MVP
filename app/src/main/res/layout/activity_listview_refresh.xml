@@ -23,7 +23,7 @@
             android:scrollingCache="true" />
     </android.support.v4.widget.SwipeRefreshLayout>
 
-    <com.can.mvp.base.baseadapter.EmptyLayout
+    <com.can.mvp.base.baseview.EmptyLayout
         android:id="@+id/error_layout"
 
         android:layout_width="match_parent"

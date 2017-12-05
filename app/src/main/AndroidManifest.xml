@@ -44,7 +44,8 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".demo.activity.Activity_Demo4"
             android:screenOrientation="portrait"/>
-
+        <activity android:name=".demo.activity.Activity_Demo6"
+            android:screenOrientation="portrait"/>
         <!--数据-->
         <activity android:name=".demo.activity.Activity_Demo5"
             android:screenOrientation="portrait"/>
