@@ -28,6 +28,11 @@ public class Activity_Demo4 extends BaseActivity {
     }
 
     @Override
+    protected void initView() {
+        super.initView();
+    }
+
+    @Override
     public void widgetClick(View v) {
         super.widgetClick(v);
         switch (v.getId()){
