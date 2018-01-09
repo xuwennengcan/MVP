@@ -12,7 +12,7 @@ class Activity_Demo7: BaseActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setStatusBar(true,true,true)
+        setStatusBar(true,true,true) 
     }
 
     override fun setRootView() {
