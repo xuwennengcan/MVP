@@ -129,6 +129,23 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_marginTop="1dp"
+                android:id="@+id/ll_click7"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:background="@color/color_white"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="7.Kotlin"
+                    />
+
+            </LinearLayout>
         </LinearLayout>
 
     </ScrollView>

@@ -49,6 +49,9 @@
         <!--数据-->
         <activity android:name=".demo.activity.Activity_Demo5"
             android:screenOrientation="portrait"/>
+        <!--kotlin-->
+        <activity android:name=".demo.activity.Activity_Demo7"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

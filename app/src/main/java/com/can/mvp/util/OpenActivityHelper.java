@@ -8,6 +8,7 @@ import com.can.mvp.demo.activity.Activity_Demo3;
 import com.can.mvp.demo.activity.Activity_Demo4;
 import com.can.mvp.demo.activity.Activity_Demo5;
 import com.can.mvp.demo.activity.Activity_Demo6;
+import com.can.mvp.demo.activity.Activity_Demo7;
 
 /**
  * 展示其它页面
@@ -33,5 +34,8 @@ public class OpenActivityHelper {
     }
     public static void showDemo6Activity(Context context) {
         OpenActivityUtil.getInstance().openActivity(context, Activity_Demo6.class);
+    }
+    public static void showDemo7Activity(Context context) {
+        OpenActivityUtil.getInstance().openActivity(context, Activity_Demo7.class);
     }
 }

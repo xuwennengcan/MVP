@@ -22,5 +22,6 @@ public class Activity_Demo2 extends BaseActivity {
     public void setRootView() {
         super.setRootView();
         setContentView(R.layout.activity_demo2);
+
     }
 }

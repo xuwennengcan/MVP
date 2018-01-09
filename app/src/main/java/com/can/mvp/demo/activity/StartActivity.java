@@ -35,6 +35,7 @@ public class StartActivity extends BaseActivity {
         bindView(R.id.ll_click4,true);
         bindView(R.id.ll_click5,true);
         bindView(R.id.ll_click6,true);
+        bindView(R.id.ll_click7,true);
     }
 
     @Override
@@ -58,6 +59,9 @@ public class StartActivity extends BaseActivity {
                 break;
             case R.id.ll_click6:
                 OpenActivityHelper.showDemo6Activity(StartActivity.this);
+                break;
+            case R.id.ll_click7:
+                OpenActivityHelper.showDemo7Activity(StartActivity.this);
                 break;
         }
     }

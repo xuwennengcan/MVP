@@ -1,4 +1,8 @@
 apply plugin: 'com.android.application'
+//必须
+apply plugin: 'kotlin-android'
+//快捷的findviewfindid操作，建议加上
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 25
@@ -34,5 +38,8 @@ dependencies {
     compile 'com.github.ybq:Android-SpinKit:1.1.0'
     //为导入Tablayout而加
     compile 'com.android.support:design:23.3.0'
+    //kotlin
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 
 }
