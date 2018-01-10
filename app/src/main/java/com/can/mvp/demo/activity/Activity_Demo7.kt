@@ -1,5 +1,6 @@
 package com.can.mvp.demo.activity
 
+import android.content.Intent
 import android.os.Bundle
 import com.can.mvp.R
 import com.can.mvp.base.baseactivity.BaseActivity
@@ -12,7 +13,7 @@ class Activity_Demo7: BaseActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setStatusBar(true,true,true) 
+        setStatusBar(true,true,true)
     }
 
     override fun setRootView() {
