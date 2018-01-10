@@ -12,7 +12,6 @@ class MyApplication2:Application(){
         private var instatnce : MyApplication2?=null
         private var util : ActivityManagerUtil ?= null
         fun getInstance() = instatnce
-
         fun exit(){
             util?.finishAllActivity()
         }
