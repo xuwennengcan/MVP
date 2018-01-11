@@ -13,8 +13,7 @@ class MyApplication2:Application(){
         private var util : ActivityManagerUtil ?= null
         fun getInstance() = instatnce
         fun exit(){
-
-            //util?.finishAllActivity()
+            util?.finishAllActivity()
         }
     }
 
